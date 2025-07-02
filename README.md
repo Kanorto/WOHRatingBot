@@ -8,6 +8,14 @@ verified administrators keep their host information current. The entire
 workflow is handled in a Telegram supergroup so moderators can easily
 track activity and communicate with hoster representatives.
 
+The bot is built with **aiogram** while the mini-application uses
+**FastAPI**. Both parts share a single SQLite database through
+**SQLAlchemy** with migrations managed by **Alembic** so the data can be
+ported to another engine later. English and Russian interfaces are
+planned from the start. Extensive logging and a debug mode help trace
+user actions and simplify development. Deployment can be done via a
+Docker setup or a hosting panel such as **Pterodactyl**.
+
 ## Overview
 - **Transparency first.** Ratings are public, free of charge, and based
   on community feedback.
@@ -17,6 +25,23 @@ track activity and communicate with hoster representatives.
   Telegram supergroup with topics.
 - **Extensibility.** New rating categories and service types can be
   added without code changes.
+
+## Project Structure
+
+```
+WOHRatingBot/
+├── bot/        # Telegram bot (aiogram)
+├── webapp/     # FastAPI mini-application
+├── models/     # Database schemas and migrations
+├── data/       # Static data or migrations
+├── tests/      # Unit tests
+├── requirements.txt
+├── TODO.md
+└── README.md
+```
+
+The bot and web app share the same database so they can run together or
+be split into separate services later.
 
 ## Key Features
 
@@ -97,10 +122,9 @@ track activity and communicate with hoster representatives.
 ### API and Future Plans
 - A public **REST API** will provide access to ratings, host data, and
   statistics for external integrations.
-- Multi-language support and potential integrations with other platforms
-  are under consideration.
-- Additional analytics, advanced recommendation algorithms, and
-  import/export tools are planned for future releases.
+- English and Russian interfaces are planned from the start,
+  with the option to add more languages later.
+- Additional analytics, advanced recommendation algorithms, and import/export tools are planned for future releases.
 
 ## Administration
 - Administrators can easily add or remove hoster information, reviews,
@@ -114,10 +138,27 @@ track activity and communicate with hoster representatives.
 
 ## Getting Started
 1. Clone this repository.
-2. Install dependencies and provide a Telegram API token.
-3. Run the bot and open the mini-application from Telegram.
-4. Use the supergroup topics to manage host submissions and reviews.
+2. Create a virtual environment and install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. Initialize the SQLite database and run migrations with Alembic.
+4. Provide your Telegram API token in the environment or a config file.
+5. Start the services during development:
+   ```bash
+   python bot/main.py         # Telegram bot
+   uvicorn webapp.app:app --reload  # Web app
+   ```
+6. Open the mini-application through Telegram and use the supergroup
+   topics to manage host submissions and reviews.
 
-Further setup instructions and contribution guidelines will be added as
-the project evolves.
+Contribution guidelines and additional deployment instructions will be
+added as the project evolves.
+
+## Deployment
+The services can run in Docker containers so they are easy to move to
+other servers or a panel such as **Pterodactyl**. The same SQLite (or
+later PostgreSQL) database is shared between the bot and web app. Logs
+are written to files by default, and enabling the debug mode provides
+extra details for troubleshooting.
 
