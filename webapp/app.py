@@ -1,6 +1,8 @@
 from fastapi import FastAPI
 
-app = FastAPI(title="WOH Rating Web App")
+from config import DEBUG
+
+app = FastAPI(title="WOH Rating Web App", debug=DEBUG)
 
 
 @app.get("/")

@@ -143,10 +143,8 @@ The repository now contains basic placeholders for these components so developme
    ```bash
    pip install -r requirements.txt
    ```
-3. Initialize the SQLite database and run migrations with Alembic:
-   ```bash
-   alembic upgrade head
-   ```
+3. Initialize the SQLite database and run migrations with Alembic.
+
 4. Provide your Telegram API token in the environment or a config file.
 5. Start the services during development:
    ```bash

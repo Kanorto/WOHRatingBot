@@ -2,12 +2,11 @@ from aiogram import Bot, Dispatcher, types
 from aiogram.utils import executor
 import logging
 
-# TODO: move to config
-API_TOKEN = "YOUR_TELEGRAM_BOT_TOKEN"
+from config import BOT_TOKEN, DEBUG
 
-logging.basicConfig(level=logging.INFO)
+logging.basicConfig(level=logging.DEBUG if DEBUG else logging.INFO)
 
-bot = Bot(token=API_TOKEN)
+bot = Bot(token=BOT_TOKEN)
 dp = Dispatcher(bot)
 
 
