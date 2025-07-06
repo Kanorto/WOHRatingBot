@@ -46,6 +46,7 @@ This document outlines the main tasks needed to transform the README description
 
 This list can be expanded as the project grows. For now, it serves as the roadmap to build the first working version of WOHRatingBot.
 
+
 ## Next Steps (Core Implementation)
 
 1. **Database Schema**
@@ -68,3 +69,4 @@ This list can be expanded as the project grows. For now, it serves as the roadma
    - [ ] Configure test database and example fixtures.
 
 These tasks build directly on the ideas outlined in the README: a single database, moderator approval workflow, and transparent ratings in both English and Russian.
+
