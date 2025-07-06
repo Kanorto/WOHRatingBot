@@ -70,3 +70,46 @@ This list can be expanded as the project grows. For now, it serves as the roadma
 
 These tasks build directly on the ideas outlined in the README: a single database, moderator approval workflow, and transparent ratings in both English and Russian.
 
+## Ordered Development Roadmap
+
+1. **Environment setup and config loading**
+   - [ ] Create a local virtual environment and install dependencies.
+   - [ ] Add an example `.env` file and implement a config loader.
+   - [ ] Configure the database engine and create a shared session manager.
+   - [ ] Set up basic logging configuration with a debug flag.
+
+2. **Database schema design and Alembic migrations**
+   - [ ] Define core models (`User`, `Hoster`, `Review`, `Rating`).
+   - [ ] Generate initial Alembic migrations and commit the schema.
+   - [ ] Configure `alembic.ini` and the migration environment.
+   - [ ] Provide optional seed data for development.
+
+3. **Core bot commands and callbacks**
+   - [ ] Implement `/start` and `/help` commands.
+   - [ ] Add `/add_host` handler for administrators.
+   - [ ] Create callback handlers for approve/reject buttons.
+   - [ ] Integrate session middleware for database access.
+
+4. **Web app routes and templates**
+   - [ ] Build host list template and route.
+   - [ ] Add host detail page with rating information.
+   - [ ] Implement review submission form.
+   - [ ] Draft admin dashboard templates.
+
+5. **Logging and debug features**
+   - [ ] Enable structured logging with rotation.
+   - [ ] Toggle verbose debug mode via configuration.
+   - [ ] Add detailed error handlers for bot and web app.
+
+6. **Admin tools and moderation workflow**
+   - [ ] Implement interface to approve new hosts and reviews.
+   - [ ] Build a moderation queue with role checks.
+   - [ ] Display activity logs for administrators.
+   - [ ] Enforce permissions for sensitive actions.
+
+7. **Deployment scripts and Docker setup**
+   - [ ] Create Dockerfile for bot and web application services.
+   - [ ] Provide `docker-compose` configuration with the database.
+   - [ ] Include sample environment files for deployment.
+   - [ ] Add helper scripts for running migrations in containers.
+
