@@ -144,7 +144,8 @@ The repository now contains basic placeholders for these components so developme
    pip install -r requirements.txt
    ```
 3. Initialize the SQLite database and run migrations with Alembic.
-4. Provide your Telegram API token in the environment or a config file.
+4. Create a `.env` file based on `.env.example` and set the required
+   environment variables (`BOT_TOKEN`, `DATABASE_URL`, `DEBUG`).
 5. Start the services during development:
    ```bash
    python bot/main.py         # Telegram bot
