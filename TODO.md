@@ -6,7 +6,7 @@ This document outlines the main tasks needed to transform the README description
 - [ ] Initialize Python project with **aiogram** for the Telegram bot and **FastAPI** for the web application.
 - [ ] Create a shared virtual environment and add `requirements.txt`.
 - [ ] Configure logging with separate debug mode and log rotation.
-- [ ] Provide a unified SQLite database using **SQLAlchemy** and **Alembic** for migrations.
+- [ ] Provide a unified SQLite database using **SQLAlchemy** and **Alembic** for migrations stored in the `data/` directory.
 - [ ] Add multi-language support (English and Russian) to both bot and web app.
 
 ## 2. Core Telegram Bot

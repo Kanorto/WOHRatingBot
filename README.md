@@ -143,7 +143,10 @@ The repository now contains basic placeholders for these components so developme
    ```bash
    pip install -r requirements.txt
    ```
-3. Initialize the SQLite database and run migrations with Alembic.
+3. Initialize the SQLite database and run migrations with Alembic:
+   ```bash
+   alembic upgrade head
+   ```
 4. Provide your Telegram API token in the environment or a config file.
 5. Start the services during development:
    ```bash
@@ -153,8 +156,16 @@ The repository now contains basic placeholders for these components so developme
 6. Open the mini-application through Telegram and use the supergroup
    topics to manage host submissions and reviews.
 
+
 Contribution guidelines and additional deployment instructions will be
 added as the project evolves.
+
+### Running Migrations
+Migration scripts live in the `data/` directory created by Alembic. Useful commands:
+```bash
+alembic revision -m "message"  # create migration
+alembic upgrade head           # apply migrations
+```
 
 ## Deployment
 The services can run in Docker containers so they are easy to move to
