@@ -45,3 +45,28 @@ This document outlines the main tasks needed to transform the README description
 ---
 
 This list can be expanded as the project grows. For now, it serves as the roadmap to build the first working version of WOHRatingBot.
+
+
+## Next Steps (Core Implementation)
+
+1. **Database Schema**
+   - [ ] Define `Hoster` model with service categories, location, and contacts.
+   - [ ] Define `Review` and `Rating` models linked to `User` and `Hoster`.
+   - [ ] Add Alembic migrations for initial tables.
+2. **Bot Commands**
+   - [ ] `/add_host` and `/my_hosts` commands for administrators.
+   - [ ] `/review` command for users to submit a review via the web app.
+   - [ ] Callback handlers for moderator approval buttons.
+3. **Web App Views**
+   - [ ] Host list and detail pages using Jinja2 templates.
+   - [ ] Review submission form with validation.
+   - [ ] Admin dashboard to confirm or update host information.
+4. **Logging**
+   - [ ] Implement structured logging to file with rotation.
+   - [ ] Add verbose debug mode controlled by environment variable.
+5. **Testing**
+   - [ ] Start unit tests for basic models and handlers.
+   - [ ] Configure test database and example fixtures.
+
+These tasks build directly on the ideas outlined in the README: a single database, moderator approval workflow, and transparent ratings in both English and Russian.
+

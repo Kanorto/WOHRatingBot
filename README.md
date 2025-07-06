@@ -42,6 +42,7 @@ WOHRatingBot/
 
 The bot and web app share the same database so they can run together or
 be split into separate services later.
+The repository now contains basic placeholders for these components so development can begin immediately.
 
 ## Key Features
 
